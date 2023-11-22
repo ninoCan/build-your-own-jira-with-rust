@@ -20,3 +20,6 @@ mod ownership;
 #[path = "koans/01_ticket/06_traits.rs"]
 mod traits;
 
+#[path = "koans/01_ticket/07_derive.rs"]
+mod derive;
+
