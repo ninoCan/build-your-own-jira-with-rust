@@ -5,7 +5,7 @@
 ///
 /// Let's fix that introducing a bunch of accessor methods providing **read-only** access
 /// to the fields in a ticket.
-
+///
 /// Let's import the Status enum we defined in the previous exercise, we won't have to modify it.
 use super::visibility::ticket::Status;
 
@@ -37,20 +37,20 @@ impl Ticket {
     /// Tracking ownership at compile-time is what makes it possible for Rust not to have
     /// garbage collection without requiring the developer to manage memory explicitly
     /// (most of the times).
-    ///
+
     /// What can an owner do with a value `a`?
-    /// It can mutate it.
-    /// It can move ownership to another function or variable.
-    /// It can lend many immutable references (`&a`) to that value to other functions or variables.
+    /// It can _mutate_ it.
+    /// It can _move ownership_ to another function or variable.
+    /// It can _lend many immutable_ references (`&a`) to that value to other functions or variables.
     /// It can lend a **single** mutable reference (`&mut a`) to that value to another
     /// function or variable.
     ///
     /// What can you do with a shared immutable reference (`&a`) to a value?
-    /// You can read the value and create more immutable references.
+    /// You can _read the value and create more immutable references_.
     ///
     /// What can you do with a single mutable reference (`&mut a`) to a value?
-    /// You can mutate the underlying value.
-    ///
+    /// You can _mutate the underlying value_.
+
     /// Ownership is embedded in the type system: each function has to declare in its signature
     /// what kind of ownership level it requires for all its arguments.
     /// If the caller cannot fulfill those requirements, they cannot call the function.
@@ -64,7 +64,7 @@ impl Ticket {
     /// and its rules.
     /// To read more on ownership check:
     /// https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html
-    pub fn title(&self) -> &String {
+    pub fn title(&self) -> &str {
         /// We are returning an immutable reference (&) to our title field.
         /// This will allow us to access this field without being able to mutate it:
         /// encapsulation is guaranteed and we can rest assured that our invariants
@@ -75,12 +75,12 @@ impl Ticket {
     /// Replace __ with the proper types to get accessor methods for the other two fields.
     /// If you are asking yourself why we are returning &str instead of &String, check out:
     /// https://blog.thoughtram.io/string-vs-str-in-rust/
-    pub fn description(__) -> __ {
-        todo!()
+    pub fn description(&self) -> &str {
+        &self.description
     }
 
-    pub fn status(__) -> __ {
-       todo!()
+    pub fn status(&self) -> &Status {
+       &self.status
     }
 }
 

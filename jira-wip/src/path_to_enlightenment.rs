@@ -14,3 +14,6 @@ mod validation;
 #[path = "koans/01_ticket/04_visibility.rs"]
 mod visibility;
 
+#[path = "koans/01_ticket/05_ownership.rs"]
+mod ownership;
+
