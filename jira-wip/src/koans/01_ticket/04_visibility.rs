@@ -90,7 +90,7 @@ mod tests {
         //
         // Once you have verified that the below does not compile,
         // comment the lines out to move on to the next koan!
-        let ticket = Ticket {
+        let _ticket = Ticket {
             title: "A title".into(),
             description: "A description".into(),
             status: Status::ToDo,

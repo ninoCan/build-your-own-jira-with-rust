@@ -17,3 +17,6 @@ mod visibility;
 #[path = "koans/01_ticket/05_ownership.rs"]
 mod ownership;
 
+#[path = "koans/01_ticket/06_traits.rs"]
+mod traits;
+

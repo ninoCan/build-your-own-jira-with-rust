@@ -1,5 +1,4 @@
 use crate::path_to_enlightenment::visibility::ticket::Status;
-
 /// You might have noticed that in the test for the previous koan we haven't checked if
 /// the status returned by `.status()` matched the status we passed to `create_ticket`.
 ///
@@ -17,6 +16,7 @@ use crate::path_to_enlightenment::visibility::ticket::Status;
 ///    = note: an implementation of `std::cmp::PartialEq` might be missing for `&path_to_enlightenment::visibility::ticket::Status`
 ///
 /// `assert_eq` requires that its arguments implement the `PartialEq` trait.
+
 /// What is a trait?
 /// Traits in Rust are very similar to interfaces in other programming languages:
 /// a trait describes a behaviour/capability.
@@ -39,7 +39,7 @@ use crate::path_to_enlightenment::visibility::ticket::Status;
 ///     }
 /// }
 /// ```
-///
+
 /// `PartialEq` is the trait that powers the == operator.
 /// Its definition looks something like this (simplified):
 /// ```
@@ -49,14 +49,18 @@ use crate::path_to_enlightenment::visibility::ticket::Status;
 /// ```
 /// It's slightly more complicated, with generic parameters, to allow comparing different types.
 /// But let's roll with this simplified version for now.
-///
+
 /// Let's implement it for Status!
 impl PartialEq for Status {
     fn eq(&self, other: &Status) -> bool {
         // If you need to refresh the `match` syntax, checkout
         // https://doc.rust-lang.org/book/ch06-02-match.html
         match (self, other) {
-            __
+            (Status::ToDo, Status::ToDo) => true,
+            (Status::InProgress, Status::InProgress) => true,
+            (Status::Blocked, Status::Blocked) => true,
+            (Status::Done, Status::Done) => true,
+            _ => false,
         }
     }
 }
