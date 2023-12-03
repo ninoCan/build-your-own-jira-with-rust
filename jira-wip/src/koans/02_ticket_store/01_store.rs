@@ -6,7 +6,7 @@
 /// It's a unique label that unambiguously identifies a single ticket,
 /// generally `<board name>-<ticket number>`.
 /// We don't have the concept of a board yet, so we'll roll with a simple numerical id.
-///
+
 /// What is the simplest data structure that allows us to fetch a ticket given its id?
 /// It makes sense for us to use a HashMap, also known as a dictionary in other languages.
 /// You can read more about the HashMap in Rust here:
@@ -40,7 +40,7 @@ impl TicketStore {
     /// We take `&mut self` because we will have to mutate our HashMap to insert a new
     /// key-value pair.
     pub fn save(&mut self, ticket: Ticket, id: u32) {
-        todo!()
+        data: HashMap<>
     }
 
     pub fn get(&self, id: &u32) -> &Ticket {

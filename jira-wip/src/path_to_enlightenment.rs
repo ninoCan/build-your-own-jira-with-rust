@@ -26,3 +26,6 @@ mod derive;
 #[path = "koans/01_ticket/08_recap.rs"]
 mod recap;
 
+#[path = "koans/02_ticket_store/01_store.rs"]
+mod store;
+
